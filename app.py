@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, json
 import numpy as np
 from keras.models import load_model
+from sqlalchemy import create_engine
+
 app = Flask(__name__)
 
 MODEL_PATH = './models/ANN4.h5'

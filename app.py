@@ -45,13 +45,13 @@ def proType2():
         res.append(vm)
         res.append(cars)
         res.append(k)
-        # prediction = model.predict(np.array([res]))
-        # if prediction[[0]] > 0.60:
-        #     prediction = True
-        # else:
-        #     prediction = False
+        prediction = model.predict(np.array([res]))
+        if prediction[[0]] > 0.60:
+            prediction = True
+        else:
+            prediction = False
         response = {
-            "response": 'yei'
+            "response": prediction
         }
         return json.dumps(response)
 

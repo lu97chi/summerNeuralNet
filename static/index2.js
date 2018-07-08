@@ -31,7 +31,7 @@ let $send = document.getElementById('send').addEventListener('click', () => {
     form.set('vp', $avg)
     form.set('vm', $max)
     if($speedL && ($time && $time < 24) && $cars){
-        fetch('http://127.0.0.1:9000/api/proto2', {
+        fetch('https://neuraltesttrain.herokuapp.com/api/proto2', {
         method: 'POST',
         body: form
             })
@@ -53,7 +53,7 @@ $('#save').on('click', ()=>{
     console.log(dataRes);
     form.set('traffic', traffic)
     if(dataRes){
-        fetch('http://127.0.0.1:9000/api/db',{
+        fetch('https://neuraltesttrain.herokuapp.com/api/db',{
         method: 'POST',
         body: form
         }).then(data => data.json()).then( data => {

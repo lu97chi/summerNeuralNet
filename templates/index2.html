@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+    <title>Prediction Module Test1</title>
+</head>
+
+<body>
+    <div class="row">
+        <div class="input-field col s6">
+            <select name="year" id="year">
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+            </select>
+            <label for="year">Año</label>
+        </div>
+        <div class="input-field col s6">
+            <select name="month" id="month">
+                <option value="January">Enero</option>
+                <option value="February">Febrero</option>
+                <option value="March">Marzo</option>
+                <option value="April">Abril</option>
+                <option value="May">Mayo</option>
+                <option value="June">Junio</option>
+                <option value="July">Julio</option>
+                <option value="August">Agosto</option>
+                <option value="September">Septiembre</option>
+                <option value="October">Octubre</option>
+                <option value="November">Noviembre</option>
+                <option value="December">Diciembre</option>
+            </select>
+            <label for="month">Mes</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <select name="direction" id="direction">
+                <option value="N">Norte</option>
+                <option value="W">Este</option>
+                <option value="O">Oeste</option>
+                <option value="S">Sur</option>
+            </select>
+            <label for="year">Direccion</label>
+
+        </div>
+        <div class="input-field col s6">
+            <input type="number" name="" id="speedL">
+            <label for="speedL">Limite</label>
+
+            <br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col s6">
+            <input type="number" name="" id="time" min="0" max="23">
+            <label for="time">Hora</label>
+            <br>
+        </div>
+        <div class="input-field col s6">
+            <select name="day" id="day">
+                <option value="Monday">Lunes</option>
+                <option value="Tuesday">Martes</option>
+                <option value="Wednesday">Miercoles</option>
+                <option value="Thrusday">Jueves</option>
+                <option value="Friday">Viernes</option>
+                <option value="Saturday">Sabado</option>
+                <option value="Sunday">Domingo</option>
+            </select>
+            
+            <label for="day">dia</label>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <select name="street" id="street">
+                    <option value="Street">Street</option>
+                    <option value="Road">Road</option>
+                    <option value="Lane">Lane</option>
+                    <option value="Drive">Drive</option>
+                    <option value="Place">Place</option>
+                    <option value="Esplanade">Splanade</option>
+                    <option value="Terrace">Terrace</option>
+                    <option value="Crescent">Crescent</option>
+                    <option value="Avenue">Avenue</option>
+                    <option value="Parade">Parade</option>
+                </select>
+            </div>
+            <div class="input-field col s6">
+                <input type="number" name="" id="cars">
+                <label for="cars">Carros</label>
+                <br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="number" name="avg" id="avg">
+                <label for="avg">Velocidad promedio</label>
+            </div>
+            <div class="input-field col s6">
+                <input type="number" name="maxS" id="maxS" disabled>
+                <!-- <label for="maxS">Velocidad maxima</label> -->
+                <small>Velocida Maxima</small>
+            </div>
+        </div>
+        <div class="row">
+            <h1 id="trafficValue"></h1>
+        </div>
+    </div>
+    <button id="send" class="btn">Send</button>
+    <button id="save" class="btn">Save</button>
+
+    <script src="../static/index2.js"></script>
+</body>
+
+</html>

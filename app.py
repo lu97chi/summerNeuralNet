@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, json
 import numpy as np
 import keras
 app = Flask(__name__)
@@ -74,6 +74,6 @@ def db():
         "status": 'Done'
     }
     return json.dumps(response)
-    
+
 if __name__ == '__main__':
     app.run(debug=True, use_reloader=True)

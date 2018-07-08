@@ -9,7 +9,7 @@ def homepage():
 
 @app.route('/api/proto2', methods=['POST'])
 def proType2():
-    model = keras.models.load_model('ANN4.h5')
+    # model = keras.models.load_model('ANN4.h5')
     if request.method == 'POST':
 
         year = years(str(request.form.get('year')))
@@ -43,13 +43,13 @@ def proType2():
         res.append(vm)
         res.append(cars)
         res.append(k)
-        prediction = model.predict(np.array([res]))
-        if prediction[[0]] > 0.60:
-            prediction = True
-        else:
-            prediction = False
+        # prediction = model.predict(np.array([res]))
+        # if prediction[[0]] > 0.60:
+        #     prediction = True
+        # else:
+        #     prediction = False
         response = {
-            "response": prediction
+            "response": 'yei'
         }
         return json.dumps(response)
 

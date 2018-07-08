@@ -9,7 +9,7 @@ def homepage():
 
 @app.route('/api/proto2', methods=['POST'])
 def proType2():
-    # model = keras.models.load_model('ANN4.h5')
+    model = keras.models.load_model('ANN4.h5')
     if request.method == 'POST':
 
         year = years(str(request.form.get('year')))

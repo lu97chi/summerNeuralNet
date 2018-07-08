@@ -35,18 +35,17 @@ let $send = document.getElementById('send').addEventListener('click', () => {
         method: 'POST',
         body: form
             })
-        .then(data => console.log(data))
-        // .then(data => {
-        //     console.log(data.response)
-        //     dataRes = true;
-        //     if(data.response){
-        //         $('#trafficValue').text('Habra Trafico :c')
-        //         traffic = true;                
-        //     }else{
-        //         $('#trafficValue').text('No habra Trafico :D')
-        //         traffic = false;                
-        //     }
-        // })
+        .then(data => data.json()).then(data => {
+            console.log(data.response)
+            dataRes = true;
+            if(data.response){
+                $('#trafficValue').text('Habra Trafico :c')
+                traffic = true;                
+            }else{
+                $('#trafficValue').text('No habra Trafico :D')
+                traffic = false;                
+            }
+        })
     }
 })
 

@@ -1,7 +1,10 @@
 from flask import Flask, render_template, request, json
 import numpy as np
-import keras
+from keras.models import load_model
 app = Flask(__name__)
+
+MODEL_PATH = 'ANN4.h5'
+model = load_model(MODEL_PATH)
 
 @app.route('/')
 def homepage():
@@ -9,7 +12,6 @@ def homepage():
 
 @app.route('/api/proto2', methods=['POST'])
 def proType2():
-    model = keras.models.load_model('./ANN4.h5')
     if request.method == 'POST':
 
         year = years(str(request.form.get('year')))

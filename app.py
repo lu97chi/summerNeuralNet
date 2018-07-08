@@ -4,7 +4,7 @@ from keras.models import load_model
 app = Flask(__name__)
 
 MODEL_PATH = 'ANN4.h5'
-model = load_model(MODEL_PATH)
+# model = load_model(MODEL_PATH)
 
 @app.route('/')
 def homepage():

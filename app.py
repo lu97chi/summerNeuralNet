@@ -2,14 +2,14 @@ from flask import Flask, render_template, request, json
 import numpy as np
 from keras.models import load_model
 from sqlalchemy import create_engine
-from flask_cors import CORS
+# from flask_cors import CORS
 
 
 app = Flask(__name__)
 db_string = 'postgres://mewvehlogtazsx:37a06497f63ce816aabebe0d7ed300f3777f33ddd92b18002bd74f6bcc3cac17@ec2-50-19-105-188.compute-1.amazonaws.com:5432/d1dbg2l6nvp583'
 MODEL_PATH = './models/ANN4.h5'
 model = load_model(MODEL_PATH)
-CORS(app)
+# CORS(app)
 
 @app.route('/')
 def homepage():

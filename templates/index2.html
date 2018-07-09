@@ -12,114 +12,190 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
     <title>Prediction Module Test1</title>
+    <link rel="stylesheet" href="../static/index.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
 <body>
-    <div class="row">
-        <div class="input-field col s6">
-            <select name="year" id="year">
-                <option value="2014">2014</option>
-                <option value="2015">2015</option>
-                <option value="2016">2016</option>
-                <option value="2017">2017</option>
-            </select>
-            <label for="year">Año</label>
-        </div>
-        <div class="input-field col s6">
-            <select name="month" id="month">
-                <option value="January">Enero</option>
-                <option value="February">Febrero</option>
-                <option value="March">Marzo</option>
-                <option value="April">Abril</option>
-                <option value="May">Mayo</option>
-                <option value="June">Junio</option>
-                <option value="July">Julio</option>
-                <option value="August">Agosto</option>
-                <option value="September">Septiembre</option>
-                <option value="October">Octubre</option>
-                <option value="November">Noviembre</option>
-                <option value="December">Diciembre</option>
-            </select>
-            <label for="month">Mes</label>
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-field col s6">
-            <select name="direction" id="direction">
-                <option value="N">Norte</option>
-                <option value="W">Este</option>
-                <option value="O">Oeste</option>
-                <option value="S">Sur</option>
-            </select>
-            <label for="year">Direccion</label>
+    <header>
 
-        </div>
-        <div class="input-field col s6">
-            <input type="number" name="" id="speedL">
-            <label for="speedL">Limite</label>
+        <nav class="black" style="height: 100px;">
+            <div class="nav-wrapper container" style="padding-top: 2%">
+                <a href="#!" class="brand-logo robo">El Robots <img src="../static/8.jpeg" style="width: 50px" alt=""> ta</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul class="right hide-on-med-and-down">
+                    <li class="listItem">
+                        <a href="https://elrobotista.com/">Inicio</a>
+                    </li>
+                    <li class="listItem">
+                        <a href="https://elrobotista.com/blog/">Blog</a>
+                    </li>
+                    <li class="listItem">
+                        <a href="https://elrobotista.com/about/">Nosotros</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
 
+        <ul class="sidenav" id="mobile-demo">
+            <li class="listItem">
+                <a href="https://elrobotista.com/">Inicio</a>
+            </li>
+            <li class="listItem">
+                <a href="https://elrobotista.com/blog/">Blog</a>
+            </li>
+            <li class="listItem">
+                <a href="https://elrobotista.com/about/">Nosotros</a>
+            </li>
+        </ul>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <p class="type">PROGRAMACIÓN</p>
+                <h1>Red neuronal artificial para trafico vehicular</h1>
+                <span class="date">POSTED JULY 4, 2018</span>
+                <span class="authors">MARCO HERNANDEZ Y LUIS HERNANDEZ</span>
+            </div>
+        </div>
+        <div class="row">
+            <p>
+                Espacio para el verbo de tarin
+            </p>
+        </div>
+        <div class="row">
+            <span>Ahora, te invitamos que nos ayudes a entrenar nuestra red, solamente crea un escenario y nosotros haremos el
+                resto</span>
             <br>
-        </div>
-    </div>
-    <div class="row">
-        <div class="input-field col s6">
-            <input type="number" name="" id="time" min="0" max="23">
-            <label for="time">Hora</label>
-            <br>
-        </div>
-        <div class="input-field col s6">
-            <select name="day" id="day">
-                <option value="Monday">Lunes</option>
-                <option value="Tuesday">Martes</option>
-                <option value="Wednesday">Miercoles</option>
-                <option value="Thrusday">Jueves</option>
-                <option value="Friday">Viernes</option>
-                <option value="Saturday">Sabado</option>
-                <option value="Sunday">Domingo</option>
-            </select>
-            
-            <label for="day">dia</label>
-        </div>
-        <div class="row">
-            <div class="input-field col s6">
-                <select name="street" id="street">
-                    <option value="Street">Street</option>
-                    <option value="Road">Road</option>
-                    <option value="Lane">Lane</option>
-                    <option value="Drive">Drive</option>
-                    <option value="Place">Place</option>
-                    <option value="Esplanade">Splanade</option>
-                    <option value="Terrace">Terrace</option>
-                    <option value="Crescent">Crescent</option>
-                    <option value="Avenue">Avenue</option>
-                    <option value="Parade">Parade</option>
-                </select>
+            <div class="row">
+                <div class="input-field col s6">
+                    <select name="year" id="year">
+                        <option value="2014">2014</option>
+                        <option value="2015">2015</option>
+                        <option value="2016">2016</option>
+                        <option value="2017">2017</option>
+                    </select>
+                    <label for="year">Año</label>
+                </div>
+                <div class="input-field col s6">
+                    <select name="month" id="month">
+                        <option value="January">Enero</option>
+                        <option value="February">Febrero</option>
+                        <option value="March">Marzo</option>
+                        <option value="April">Abril</option>
+                        <option value="May">Mayo</option>
+                        <option value="June">Junio</option>
+                        <option value="July">Julio</option>
+                        <option value="August">Agosto</option>
+                        <option value="September">Septiembre</option>
+                        <option value="October">Octubre</option>
+                        <option value="November">Noviembre</option>
+                        <option value="December">Diciembre</option>
+                    </select>
+                    <label for="month">Mes</label>
+                </div>
             </div>
-            <div class="input-field col s6">
-                <input type="number" name="" id="cars">
-                <label for="cars">Carros</label>
-                <br>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s6">
-                <input type="number" name="avg" id="avg">
-                <label for="avg">Velocidad promedio</label>
-            </div>
-            <div class="input-field col s6">
-                <input type="number" name="maxS" id="maxS" disabled>
-                <!-- <label for="maxS">Velocidad maxima</label> -->
-                <small>Velocida Maxima</small>
-            </div>
-        </div>
-        <div class="row">
-            <h1 id="trafficValue"></h1>
-        </div>
-    </div>
-    <button id="send" class="btn">Send</button>
-    <button id="save" class="btn">Save</button>
+            <div class="row">
+                <div class="input-field col s6">
+                    <select name="direction" id="direction">
+                        <option value="N">Norte</option>
+                        <option value="W">Este</option>
+                        <option value="O">Oeste</option>
+                        <option value="S">Sur</option>
+                    </select>
+                    <label for="year">Direccion</label>
 
-    <script src="../static/index2.js"></script>
+                </div>
+                <div class="input-field col s6">
+                    <input type="number" name="" id="speedL">
+                    <label for="speedL">Limite</label>
+
+                    <br>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input type="number" name="" id="time" min="0" max="23">
+                    <label for="time">Hora</label>
+                    <br>
+                </div>
+                <div class="input-field col s6">
+                    <select name="day" id="day">
+                        <option value="Monday">Lunes</option>
+                        <option value="Tuesday">Martes</option>
+                        <option value="Wednesday">Miercoles</option>
+                        <option value="Thrusday">Jueves</option>
+                        <option value="Friday">Viernes</option>
+                        <option value="Saturday">Sabado</option>
+                        <option value="Sunday">Domingo</option>
+                    </select>
+
+                    <label for="day">dia</label>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <select name="street" id="street">
+                            <option value="Street">Street</option>
+                            <option value="Road">Road</option>
+                            <option value="Lane">Lane</option>
+                            <option value="Drive">Drive</option>
+                            <option value="Place">Place</option>
+                            <option value="Esplanade">Splanade</option>
+                            <option value="Terrace">Terrace</option>
+                            <option value="Crescent">Crescent</option>
+                            <option value="Avenue">Avenue</option>
+                            <option value="Parade">Parade</option>
+                        </select>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="number" name="" id="cars">
+                        <label for="cars">Carros</label>
+                        <br>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input type="number" name="avg" id="avg">
+                        <label for="avg">Velocidad promedio</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input type="number" name="maxS" id="maxS" disabled>
+                        <small>Velocida Maxima</small>
+                    </div>
+                    <button data-target="modal1" class="btn modal-trigger" id="send">Predecir...</button>
+                </div>
+            </div>
+        </div>
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <h4>En base a tus entradas</h4>
+                <p>Con una probabilidad del 90% de que la respuesta sea acertada, concluimos que...</p>
+                <div class="preloader-wrapper big active" id="loader">
+                    <div class="spinner-layer spinner-blue-only">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="gap-patch">
+                            <div class="circle"></div>
+                        </div>
+                        <div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+                <h1 id="trafficValue"></h1>
+
+            </div>
+            <div class="modal-footer">
+                <a href="#!" id='saveFeedGood'  class="modal-close waves-effect light-green waves-green btn text-white">Fue acierto</a>
+                <a href="#!" id='saveFeedBad' class="modal-close waves-effect red waves-green btn">No acierto</a>
+
+            </div>
+        </div>
+        <script src="../static/index2.js"></script>
 </body>
 
 </html>

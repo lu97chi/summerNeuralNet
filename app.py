@@ -2,11 +2,14 @@ from flask import Flask, render_template, request, json
 import numpy as np
 from keras.models import load_model
 from sqlalchemy import create_engine
+from flask_cors import CORS
+
 
 app = Flask(__name__)
-
+db_string = 'postgres://mewvehlogtazsx:37a06497f63ce816aabebe0d7ed300f3777f33ddd92b18002bd74f6bcc3cac17@ec2-50-19-105-188.compute-1.amazonaws.com:5432/d1dbg2l6nvp583'
 MODEL_PATH = './models/ANN4.h5'
 model = load_model(MODEL_PATH)
+CORS(app)
 
 @app.route('/')
 def homepage():
@@ -71,8 +74,9 @@ def db():
     k = (cars/vp)
     typeC= request.form.get('type')
     traffic = request.form.get('traffic')
+    feedback = request.form.get('feedBack')
     db = create_engine(db_string)
-    query = "insert into records(year, speedLimit, vp, vm, cars, direction, time, day, month, k, typeC, traffic) values('{}','{}','{}','{}','{}','{}','{}','{}', '{}', '{}', '{}','{}')".format(year,speedLimit,vp,vm,cars,direction,time,day,month,k,typeC, traffic)
+    query = "insert into records(year, speedLimit, vp, vm, cars, direction, time, day, month, k, typeC, traffic,feedBack) values('{}','{}','{}','{}','{}','{}','{}','{}', '{}', '{}', '{}','{}','{}')".format(year,speedLimit,vp,vm,cars,direction,time,day,month,k,typeC, traffic,feedback)
     db.execute(query)
     response = {
         "status": 'Done'
@@ -241,4 +245,4 @@ def street(typeS):
 
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(port=9000,debug=False)

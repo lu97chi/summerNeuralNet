@@ -1,5 +1,7 @@
 $(document).ready(function () {
     $('select').formSelect();
+    $('.modal').modal();
+    $('.sidenav').sidenav();
 });
 
 let $avg = $('#avg').on('input', (e)=>{
@@ -9,6 +11,7 @@ let $avg = $('#avg').on('input', (e)=>{
 let form = new FormData();
 let dataRes = false;
 let traffic;
+let loading;
 let $send = document.getElementById('send').addEventListener('click', () => {
     let $year = $('#year').val()
     let $month = $('#month').val()
@@ -32,6 +35,7 @@ let $send = document.getElementById('send').addEventListener('click', () => {
     form.set('vm', $max)
     if($speedL && ($time && $time < 24) && $cars){
         fetch('https://neuraltesttrain.herokuapp.com/api/proto2', {
+        // fetch('http://localhost:9000/api/proto2', {
         method: 'POST',
         body: form
             })
@@ -39,9 +43,11 @@ let $send = document.getElementById('send').addEventListener('click', () => {
             console.log(data.response)
             dataRes = true;
             if(data.response){
+                $('#loader').hide()
                 $('#trafficValue').text('Habra Trafico :c')
                 traffic = true;                
             }else{
+                $('#loader').hide()
                 $('#trafficValue').text('No habra Trafico :D')
                 traffic = false;                
             }
@@ -49,11 +55,28 @@ let $send = document.getElementById('send').addEventListener('click', () => {
     }
 })
 
-$('#save').on('click', ()=>{
-    console.log(dataRes);
+$('#saveFeedGood').on('click', ()=>{
     form.set('traffic', traffic)
+    form.set('feedBack',true)
     if(dataRes){
         fetch('https://neuraltesttrain.herokuapp.com/api/db',{
+            // fetch('http://localhost:9000/api/db', {
+
+        method: 'POST',
+        body: form
+        }).then(data => data.json()).then( data => {
+            console.log(data)
+        })
+    }
+})
+
+$('#saveFeedBad').on('click', ()=>{
+    form.set('traffic', traffic)
+    form.set('feedBack', false)
+    if(dataRes){
+        fetch('https://neuraltesttrain.herokuapp.com/api/db',{
+            // fetch('http://localhost:9000/api/db', {
+
         method: 'POST',
         body: form
         }).then(data => data.json()).then( data => {

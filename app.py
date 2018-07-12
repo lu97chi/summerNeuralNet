@@ -158,7 +158,7 @@ def directions(dire):
         'E':0,
         'W':3,
         'N':1,
-        'O':2
+        'S':2
     }[dire]
     for i in range(directA):
         directionToArray.append(0)
@@ -198,7 +198,7 @@ def hours(hour):
         '20':12,
         '21':13,
         '22':14,
-        '24':15
+        '23':15
     }[hour]
     for i in range(hourA):
         hourToArray.append(0)

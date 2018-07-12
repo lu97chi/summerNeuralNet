@@ -17,14 +17,7 @@ $('#ann').mouseup(()=>{
     $('.mainClass').removeClass('blur')
     $('#ann').removeClass('imageHold')
 })
-$('#ann').on('touchstart', ()=>{
-    $('.mainClass').addClass('blur')
-    $('#ann').addClass('imageHold')
-})
-$('#ann').on('touchend', ()=>{
-    $('.mainClass').removeClass('blur')
-    $('#ann').removeClass('imageHold')
-})
+
 
 $('#graph').mousedown(()=>{
     $('.mainClass').addClass('blur')
@@ -34,14 +27,7 @@ $('#graph').mouseup(()=>{
     $('.mainClass').removeClass('blur')
     $('#graph').removeClass('imageHold')
 })
-$('#graph').on('touchstart', ()=>{
-    $('.mainClass').addClass('blur')
-    $('#graph').addClass('imageHold')
-})
-$('#graph').on('touchend', ()=>{
-    $('.mainClass').removeClass('blur')
-    $('#graph').removeClass('imageHold')
-})
+
 
 let form = new FormData();
 let dataRes = false;
@@ -73,15 +59,16 @@ let $send = document.getElementById('send').addEventListener('click', () => {
     $('#saveFeedBad').hide()
     console.log('missing somethng')
     $('#loader').hide()
-    $('#modalP').text('Favor de proporcionar todos los datos')
-}
+    $('#modalP2').text('Favor de proporcionar todos los datos')
+    }
     else{
-        $('#saveFeedGood').show()
-    $('#saveFeedBad').show()
-    $('#loader').show()
-        $('#modalP').text('Concluimos que...')
-        $('#modalP2').text('Si piensas que fue acertada nuestra prediccion, favor de hacer click en el boton verde, de lo contrario al boton rojo')
+       
+       
         if($speedL && ($time && $time < 24) && $cars){
+            $('#saveFeedGood').show()
+            $('#saveFeedBad').show()
+            $('#loader').show()
+            $('#modalP2').text('Si piensas que fue acertada nuestra prediccion, favor de hacer click en el boton verde, de lo contrario al boton rojo')
             fetch('https://neuraltesttrain.herokuapp.com/api/proto2', {
             // fetch('http://localhost:9000/api/proto2', {
             method: 'POST',
@@ -99,6 +86,11 @@ let $send = document.getElementById('send').addEventListener('click', () => {
                     traffic = false;                
                 }
             })
+        }else{
+            $('#saveFeedGood').hide()
+            $('#saveFeedBad').hide()
+            $('#loader').hide()
+            $('#modalP2').text('Favor de proporcionar datos correctos')
         }
     }
 })

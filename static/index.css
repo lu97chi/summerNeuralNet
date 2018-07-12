@@ -25,12 +25,60 @@ h1{
     transition: .5s ease all;
 }
 
+#ann{
+    transition: .3s all ease;
+}
+
+#graph{
+    transition: .3s all ease;
+}
+
+.blur{
+    filter: blur(5px)
+}
+
+.imageHold{
+    margin-top: 5%;
+    transform: scale(1.2,1.5);
+    filter: none;
+}
+
 .listItem:hover{
-    background-color: red;
+    background-color: #8e8e8e;
+}
+
+.row footer .icons {
+    font-size: 4vw;
+    color: #8e8e8e;
+    padding-right: 2vw;
+    padding-left: 2vw;
+    padding-bottom: 3vh;
+}
+
+.icons:hover{
+    cursor: pointer;
+}
+
+
+.row footer h4{
+    font-size: 20px;
+    color: #8e8e8e;
+}
+
+.imgWidth{
+    width: 30%;
+}
+
+nav{
+    padding-top: 2%;
 }
 
 @media only screen and (max-width: 992px)  {
-    nav .container .robo{
-        font-size: 150%;
+
+    .imgWidth{
+        width: 50%;
+    }
+    .row footer .icons {
+        font-size: 12vw;
     }
 }

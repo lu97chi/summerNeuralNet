@@ -10,26 +10,21 @@ db_string = 'postgres://mewvehlogtazsx:37a06497f63ce816aabebe0d7ed300f3777f33ddd
 MODEL_PATH = './models/ANN4.h5'
 model = load_model(MODEL_PATH)
 # CORS(app)
-
 @app.route('/')
 def homepage():
     return render_template('index2.html',title = 'Proyect')
-
 @app.route('/api/proto2', methods=['POST'])
 def proType2():
     if request.method == 'POST':
-
         year = years(str(request.form.get('year')))
         speedLimit = int(request.form.get('speedLimit'))
         vp = float(request.form.get('vp'))
         vm = float(request.form.get('vm'))
         cars = int(request.form.get('cars'))
-
         direction = directions(request.form.get('direction'))
         time = hours(request.form.get('time'))
         day = days(request.form.get('day'))
         month = months(request.form.get('month'))
-
         k = (cars/vp)
         typeC= street(request.form.get('type'))
         res = []
@@ -245,4 +240,4 @@ def street(typeS):
 
 
 if __name__ == '__main__':
-    app.run(port=9000,debug=False)
+    app.run(debug=False)
